@@ -156,7 +156,7 @@ export default function Header() {
         <div style={{
           borderTop: "1px solid rgba(255,69,0,0.2)",
           padding: "1rem 1.5rem 1.5rem",
-          background: "#0a0a0a",
+          background: "#1c1c1c",
           display: "flex", flexDirection: "column", gap: "0.25rem",
           maxHeight: "70vh", overflowY: "auto",
         }}>

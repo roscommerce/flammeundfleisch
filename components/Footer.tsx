@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer style={{
-      background: "#080808",
+      background: "#161616",
       borderTop: "1px solid rgba(255,69,0,0.2)",
       padding: "4rem 1.5rem 2rem",
     }}>

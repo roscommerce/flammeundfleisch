@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 
 const KATEGORIEN = [
-  { icon: "🔥", title: "Gasgrills",       desc: "Schnell, präzise, immer bereit",        href: "/grills/gasgrill",          img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
+  { icon: "🔥", title: "Gasgrills",       desc: "Schnell, präzise, immer bereit",        href: "/grills/gasgrill",          img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80" },
   { icon: "🪨", title: "Holzkohlegrills", desc: "Das Original – echtes Raucharoma",       href: "/grills/holzkohle",         img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" },
   { icon: "💨", title: "Offset Smoker",   desc: "Low & Slow für Profis",                  href: "/smoker/offset-smoker",     img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&q=80" },
   { icon: "🪵", title: "Pelletgrills",    desc: "Automatisch smoken mit Holzaromen",      href: "/grills/pelletgrill",       img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" },
@@ -32,12 +32,12 @@ export default function HomePage() {
           position: "relative", minHeight: "92vh",
           display: "flex", alignItems: "center",
           overflow: "hidden",
-          background: "#0a0a0a",
+          background: "#1c1c1c",
         }}>
           {/* Background image with overlay */}
           <div style={{
             position: "absolute", inset: 0,
-            backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1600&q=80')",
             backgroundSize: "cover", backgroundPosition: "center",
             filter: "brightness(0.35)",
           }} />
@@ -49,11 +49,14 @@ export default function HomePage() {
             pointerEvents: "none",
           }} />
 
-          {/* Smoke particles */}
+          {/* Smoke particles – doubled */}
           {[
-            { left: "15%", bottom: "10%", width: "200px", height: "200px", delay: "0s" },
-            { left: "45%", bottom: "5%",  width: "300px", height: "300px", delay: "2s" },
-            { left: "75%", bottom: "15%", width: "180px", height: "180px", delay: "4s" },
+            { left: "10%", bottom: "8%",  width: "200px", height: "200px", delay: "0s"  },
+            { left: "25%", bottom: "12%", width: "250px", height: "250px", delay: "1s"  },
+            { left: "42%", bottom: "5%",  width: "300px", height: "300px", delay: "2s"  },
+            { left: "58%", bottom: "10%", width: "220px", height: "220px", delay: "3s"  },
+            { left: "72%", bottom: "15%", width: "180px", height: "180px", delay: "0.5s"},
+            { left: "88%", bottom: "8%",  width: "260px", height: "260px", delay: "1.5s"},
           ].map((s, i) => (
             <div key={i} className="smoke-particle" style={{
               left: s.left, bottom: s.bottom,
@@ -62,12 +65,16 @@ export default function HomePage() {
             }} />
           ))}
 
-          {/* Embers */}
+          {/* Embers – doubled */}
           {[
-            { left: "20%", bottom: "20%", delay: "0.5s" },
-            { left: "35%", bottom: "15%", delay: "1.5s" },
-            { left: "60%", bottom: "25%", delay: "2.5s" },
-            { left: "80%", bottom: "18%", delay: "0.8s" },
+            { left: "12%", bottom: "22%", delay: "0.3s" },
+            { left: "22%", bottom: "18%", delay: "1.2s" },
+            { left: "33%", bottom: "14%", delay: "0.7s" },
+            { left: "48%", bottom: "28%", delay: "2.1s" },
+            { left: "58%", bottom: "20%", delay: "1.5s" },
+            { left: "68%", bottom: "25%", delay: "0.9s" },
+            { left: "78%", bottom: "16%", delay: "2.8s" },
+            { left: "88%", bottom: "22%", delay: "0.4s" },
           ].map((e, i) => (
             <div key={i} className="ember" style={{ left: e.left, bottom: e.bottom, animationDelay: e.delay }} />
           ))}
@@ -144,12 +151,12 @@ export default function HomePage() {
           {/* Bottom fade */}
           <div style={{
             position: "absolute", bottom: 0, left: 0, right: 0, height: "120px",
-            background: "linear-gradient(to top, #0a0a0a, transparent)",
+            background: "linear-gradient(to top, #1c1c1c, transparent)",
           }} />
         </section>
 
         {/* ═══ KATEGORIEN ═══ */}
-        <section id="kategorien" style={{ padding: "6rem 1.5rem", background: "#0f0f0f" }}>
+        <section id="kategorien" style={{ padding: "6rem 1.5rem", background: "#212121" }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
             <div style={{ marginBottom: "3.5rem" }}>
               <div className="section-label" style={{ marginBottom: "0.75rem" }}>— Was suchst du?</div>
@@ -198,7 +205,7 @@ export default function HomePage() {
         </section>
 
         {/* ═══ RATGEBER ═══ */}
-        <section style={{ padding: "6rem 1.5rem", background: "#0a0a0a", position: "relative" }}>
+        <section style={{ padding: "6rem 1.5rem", background: "#1c1c1c", position: "relative" }}>
           {/* Decorative fire line */}
           <div style={{
             position: "absolute", top: 0, left: 0, right: 0, height: "2px",
@@ -259,7 +266,7 @@ export default function HomePage() {
         {/* ═══ ÜBER UNS BANNER ═══ */}
         <section style={{
           position: "relative", padding: "6rem 1.5rem", overflow: "hidden",
-          background: "#111",
+          background: "#1a1a1a",
         }}>
           <div style={{
             position: "absolute", inset: 0,
@@ -289,7 +296,7 @@ export default function HomePage() {
         </section>
 
         {/* Affiliate Hinweis */}
-        <div style={{ background: "#0a0a0a", padding: "1.5rem" }}>
+        <div style={{ background: "#1c1c1c", padding: "1.5rem" }}>
           <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
             * Affiliate-Hinweis: Flamme & Fleisch nimmt am Amazon-Partnerprogramm teil. Bei Käufen über unsere Links erhalten wir eine Provision – für dich entstehen keine Mehrkosten. Unsere Empfehlungen sind davon unabhängig.
           </p>
