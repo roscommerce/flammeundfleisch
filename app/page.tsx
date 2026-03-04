@@ -5,7 +5,7 @@ import CookieBanner from "@/components/CookieBanner";
 
 const KATEGORIEN = [
   { icon: "🔥", title: "Gasgrills",       desc: "Schnell, präzise, immer bereit",       href: "/grills/gasgrill",
-    img: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?w=400&q=80" },
+    img: "https://images.unsplash.com/photo-ul_m5dHThaM?w=400&q=80" },
   { icon: "🪨", title: "Holzkohlegrills", desc: "Das Original – echtes Raucharoma",      href: "/grills/holzkohle",
     img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" },
   { icon: "💨", title: "Offset Smoker",   desc: "Low & Slow für Profis",                 href: "/smoker/offset-smoker",
