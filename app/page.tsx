@@ -2,261 +2,251 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
-import ProductCard from "@/components/ProductCard";
 
 const KATEGORIEN = [
-  {
-    icon: "🔥",
-    title: "Gasgrills",
-    desc: "Schnell einsatzbereit, perfekte Temperaturkontrolle",
-    href: "/grills/gasgrill",
-    count: "12 Modelle",
-  },
-  {
-    icon: "🪨",
-    title: "Holzkohlegrills",
-    desc: "Das Original – für unvergleichliches Raucharoma",
-    href: "/grills/holzkohle",
-    count: "9 Modelle",
-  },
-  {
-    icon: "💨",
-    title: "Offset Smoker",
-    desc: "Low & Slow BBQ auf höchstem Niveau",
-    href: "/smoker/offset-smoker",
-    count: "8 Modelle",
-  },
-  {
-    icon: "🪵",
-    title: "Pelletgrills",
-    desc: "Automatisches Smoken mit Holzpellets",
-    href: "/grills/pelletgrill",
-    count: "7 Modelle",
-  },
-  {
-    icon: "🍢",
-    title: "Spießsysteme",
-    desc: "Spanferkel, Hähnchen & mehr perfekt gegrillt",
-    href: "/zubehoer/spiesssysteme",
-    count: "6 Produkte",
-  },
-  {
-    icon: "🌡️",
-    title: "Grillthermometer",
-    desc: "Perfekte Kerntemperatur – immer und überall",
-    href: "/zubehoer/thermometer",
-    count: "10 Produkte",
-  },
+  { icon: "🔥", title: "Gasgrills",       desc: "Schnell, präzise, immer bereit",        href: "/grills/gasgrill",          img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
+  { icon: "🪨", title: "Holzkohlegrills", desc: "Das Original – echtes Raucharoma",       href: "/grills/holzkohle",         img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" },
+  { icon: "💨", title: "Offset Smoker",   desc: "Low & Slow für Profis",                  href: "/smoker/offset-smoker",     img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&q=80" },
+  { icon: "🪵", title: "Pelletgrills",    desc: "Automatisch smoken mit Holzaromen",      href: "/grills/pelletgrill",       img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" },
+  { icon: "🍢", title: "Spießsysteme",    desc: "Spanferkel & Hähnchen auf Hochtouren",   href: "/zubehoer/spiesssysteme",   img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80" },
+  { icon: "🌡️", title: "Thermometer",    desc: "Perfekte Kerntemperatur, garantiert",    href: "/zubehoer/thermometer",     img: "https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=80" },
 ];
 
-const TOP_PRODUKTE = [
-  {
-    name: "Weber Spirit E-315 Gasgrill",
-    image: "🔥",
-    rating: 4.7,
-    reviews: 2840,
-    price: "ab 699 €",
-    highlight: "Unser Testsieger für Einsteiger & Fortgeschrittene",
-    pros: ["3 Edelstahlbrenner", "GS4 Grillsystem", "10 Jahre Garantie"],
-    affiliateUrl: "https://amzn.to/XXXXX",
-    badge: "🏆 Testsieger",
-  },
-  {
-    name: "Smokey Mountain Cooker 47cm",
-    image: "💨",
-    rating: 4.8,
-    reviews: 1560,
-    price: "ab 319 €",
-    highlight: "Der beste Einstiegs-Smoker auf dem Markt",
-    pros: ["Stabiles Porzellanemaille", "Perfekte Wärmespeicherung", "Großes Fassungsvermögen"],
-    affiliateUrl: "https://amzn.to/XXXXX",
-    badge: "💡 Empfehlung",
-  },
-  {
-    name: "MEATER+ Grillthermometer",
-    image: "🌡️",
-    rating: 4.6,
-    reviews: 4210,
-    price: "ab 89 €",
-    highlight: "Kabelloses Thermometer mit App-Anbindung",
-    pros: ["Kabellos & wasserdicht", "50m Bluetooth-Reichweite", "Gar-Assistent in der App"],
-    affiliateUrl: "https://amzn.to/XXXXX",
-  },
+const RATGEBER = [
+  { emoji: "🐷", title: "Spanferkel am Spieß – die ultimative Anleitung", tag: "Technik", href: "/ratgeber/spanferkel",
+    img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" },
+  { emoji: "🥩", title: "Low & Slow: Brisket richtig smoken",             tag: "Technik", href: "/ratgeber/low-and-slow",
+    img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80" },
+  { emoji: "🛒", title: "Smoker kaufen – worauf es wirklich ankommt",     tag: "Kaufberatung", href: "/ratgeber/smoker-kaufberatung",
+    img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" },
 ];
 
 export default function HomePage() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: "70px" }}>
+      <main style={{ paddingTop: "72px" }}>
 
-        {/* Hero */}
-        <section
-          style={{
-            background: "linear-gradient(135deg, #1a0f0a 0%, #2d1810 50%, #3d2010 100%)",
-            padding: "5rem 1.5rem 4rem",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          {/* Glow */}
-          <div
-            style={{
-              position: "absolute",
-              top: "-20%",
-              right: "-10%",
-              width: "600px",
-              height: "600px",
-              background: "radial-gradient(circle, rgba(226,88,34,0.2) 0%, transparent 70%)",
-              pointerEvents: "none",
-            }}
-          />
-          <div style={{ maxWidth: "1280px", margin: "0 auto", position: "relative" }}>
-            <div style={{ maxWidth: "680px" }}>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  background: "rgba(226,88,34,0.15)",
-                  border: "1px solid rgba(226,88,34,0.3)",
-                  borderRadius: "100px",
-                  padding: "0.35rem 1rem",
-                  marginBottom: "1.5rem",
-                }}
-              >
-                <span style={{ fontSize: "0.8rem", color: "#e25822", fontWeight: 600 }}>
-                  🔥 Unabhängige Grill-Empfehlungen
+        {/* ═══ HERO ═══ */}
+        <section style={{
+          position: "relative", minHeight: "92vh",
+          display: "flex", alignItems: "center",
+          overflow: "hidden",
+          background: "#0a0a0a",
+        }}>
+          {/* Background image with overlay */}
+          <div style={{
+            position: "absolute", inset: 0,
+            backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80')",
+            backgroundSize: "cover", backgroundPosition: "center",
+            filter: "brightness(0.35)",
+          }} />
+
+          {/* Fire glow at bottom */}
+          <div style={{
+            position: "absolute", bottom: 0, left: 0, right: 0, height: "40%",
+            background: "linear-gradient(to top, rgba(255,69,0,0.25) 0%, transparent 100%)",
+            pointerEvents: "none",
+          }} />
+
+          {/* Smoke particles */}
+          {[
+            { left: "15%", bottom: "10%", width: "200px", height: "200px", delay: "0s" },
+            { left: "45%", bottom: "5%",  width: "300px", height: "300px", delay: "2s" },
+            { left: "75%", bottom: "15%", width: "180px", height: "180px", delay: "4s" },
+          ].map((s, i) => (
+            <div key={i} className="smoke-particle" style={{
+              left: s.left, bottom: s.bottom,
+              width: s.width, height: s.height,
+              animationDelay: s.delay,
+            }} />
+          ))}
+
+          {/* Embers */}
+          {[
+            { left: "20%", bottom: "20%", delay: "0.5s" },
+            { left: "35%", bottom: "15%", delay: "1.5s" },
+            { left: "60%", bottom: "25%", delay: "2.5s" },
+            { left: "80%", bottom: "18%", delay: "0.8s" },
+          ].map((e, i) => (
+            <div key={i} className="ember" style={{ left: e.left, bottom: e.bottom, animationDelay: e.delay }} />
+          ))}
+
+          {/* Content */}
+          <div style={{ position: "relative", maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem", width: "100%" }}>
+            <div style={{ maxWidth: "700px", animation: "fadeInUp 0.8s ease both" }}>
+              <div style={{
+                display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                border: "1px solid rgba(255,69,0,0.5)",
+                borderRadius: "2px", padding: "0.35rem 1rem",
+                marginBottom: "2rem", background: "rgba(255,69,0,0.1)",
+              }}>
+                <span style={{ fontSize: "0.75rem", color: "#ff8c00", fontFamily: "var(--font-oswald)", letterSpacing: "0.15em", textTransform: "uppercase" }}>
+                  🔥 Unabhängige BBQ-Empfehlungen
                 </span>
               </div>
-              <h1
-                style={{
-                  fontFamily: "var(--font-syne)",
-                  fontWeight: 800,
-                  fontSize: "clamp(2rem, 5vw, 3.5rem)",
-                  color: "#fff",
-                  lineHeight: 1.15,
-                  letterSpacing: "-0.03em",
-                  marginBottom: "1.25rem",
-                }}
-              >
-                Grillen & Smoken{" "}
-                <span style={{ color: "#e25822" }}>auf höchstem Niveau</span>
+
+              <h1 style={{
+                fontFamily: "var(--font-oswald)", fontWeight: 700,
+                fontSize: "clamp(3rem, 8vw, 6rem)",
+                color: "#fff", lineHeight: 1.0,
+                textTransform: "uppercase", letterSpacing: "0.02em",
+                marginBottom: "1.5rem",
+                textShadow: "0 0 60px rgba(255,69,0,0.3)",
+              }}>
+                Echtes Feuer.<br />
+                <span style={{
+                  color: "transparent",
+                  WebkitTextStroke: "2px #ff4500",
+                  display: "block",
+                }}>Echtes Fleisch.</span>
+                <span style={{ color: "#ff4500" }}>Echte Ergebnisse.</span>
               </h1>
-              <p
-                style={{
-                  fontSize: "1.1rem",
-                  color: "rgba(255,255,255,0.7)",
-                  lineHeight: 1.7,
-                  marginBottom: "2rem",
-                  maxWidth: "560px",
-                }}
-              >
-                Ehrliche Tests, echte Erfahrungen. Wir helfen dir, den richtigen
-                Grill oder Smoker zu finden – ohne Marketing-Blabla.
+
+              <p style={{
+                fontSize: "1.15rem", color: "rgba(255,255,255,0.7)",
+                lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "560px",
+                fontWeight: 400,
+              }}>
+                Kein Marketing-Blabla. Nur ehrliche Tests, echte Erfahrungen und
+                die besten Empfehlungen für Grills, Smoker und BBQ-Zubehör.
               </p>
+
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                <Link href="/#kategorien" className="btn-primary" style={{ fontSize: "1rem" }}>
+                <Link href="/#kategorien" className="btn-fire" style={{ fontSize: "1rem" }}>
                   Grills & Smoker vergleichen
                 </Link>
-                <Link href="/ratgeber" className="btn-secondary" style={{ fontSize: "1rem", borderColor: "rgba(255,255,255,0.3)", color: "#fff", background: "rgba(255,255,255,0.08)" }}>
+                <Link href="/ratgeber" className="btn-outline" style={{ fontSize: "1rem" }}>
                   Ratgeber lesen
                 </Link>
               </div>
-              <div style={{ display: "flex", gap: "2rem", marginTop: "2.5rem", flexWrap: "wrap" }}>
+
+              {/* Stats */}
+              <div style={{ display: "flex", gap: "3rem", marginTop: "4rem", flexWrap: "wrap" }}>
                 {[
                   { value: "50+", label: "Produkte getestet" },
                   { value: "100%", label: "Unabhängig" },
                   { value: "∞", label: "BBQ-Leidenschaft" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <div style={{ fontFamily: "var(--font-syne)", fontWeight: 800, fontSize: "1.5rem", color: "#e25822" }}>
-                      {stat.value}
+                ].map((s) => (
+                  <div key={s.label}>
+                    <div style={{ fontFamily: "var(--font-oswald)", fontWeight: 700, fontSize: "2rem", color: "#ff4500" }}>
+                      {s.value}
                     </div>
-                    <div style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.5)" }}>
-                      {stat.label}
+                    <div style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.45)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                      {s.label}
                     </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
+
+          {/* Bottom fade */}
+          <div style={{
+            position: "absolute", bottom: 0, left: 0, right: 0, height: "120px",
+            background: "linear-gradient(to top, #0a0a0a, transparent)",
+          }} />
         </section>
 
-        {/* Kategorien */}
-        <section id="kategorien" style={{ padding: "5rem 1.5rem", background: "#f9fafb" }}>
+        {/* ═══ KATEGORIEN ═══ */}
+        <section id="kategorien" style={{ padding: "6rem 1.5rem", background: "#0f0f0f" }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <h2
-                style={{
-                  fontFamily: "var(--font-syne)",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-                  color: "#1a0f0a",
-                  marginBottom: "0.75rem",
-                }}
-              >
-                Alle Kategorien
-              </h2>
-              <p style={{ color: "#6b7280", fontSize: "1rem", maxWidth: "500px", margin: "0 auto" }}>
-                Vom Gasgrill bis zum Profi-Smoker – hier findest du alles.
-              </p>
+            <div style={{ marginBottom: "3.5rem" }}>
+              <div className="section-label" style={{ marginBottom: "0.75rem" }}>— Was suchst du?</div>
+              <h2 className="section-title">Alle Kategorien</h2>
             </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
-                gap: "1.25rem",
-              }}
-            >
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: "1.5rem" }}>
               {KATEGORIEN.map((kat) => (
-                <Link
-                  key={kat.href}
-                  href={kat.href}
-                  style={{ textDecoration: "none" }}
-                >
-                  <div
-                    className="card"
-                    style={{
-                      padding: "1.5rem",
-                      display: "flex",
-                      gap: "1rem",
-                      alignItems: "flex-start",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontSize: "2rem",
-                        width: "52px",
-                        height: "52px",
-                        background: "#fff7f4",
-                        borderRadius: "12px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
-                      }}
-                    >
-                      {kat.icon}
+                <Link key={kat.href} href={kat.href} style={{ textDecoration: "none" }}>
+                  <div className="card-dark" style={{ position: "relative", overflow: "hidden", cursor: "pointer" }}>
+                    {/* Image */}
+                    <div style={{
+                      height: "180px",
+                      backgroundImage: `url('${kat.img}')`,
+                      backgroundSize: "cover", backgroundPosition: "center",
+                      position: "relative",
+                    }}>
+                      <div style={{
+                        position: "absolute", inset: 0,
+                        background: "linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%)",
+                      }} />
+                      <div style={{
+                        position: "absolute", top: "1rem", left: "1rem",
+                        background: "rgba(0,0,0,0.6)", borderRadius: "4px",
+                        padding: "0.25rem 0.5rem", fontSize: "1.2rem",
+                      }}>{kat.icon}</div>
                     </div>
-                    <div>
-                      <h3
-                        style={{
-                          fontFamily: "var(--font-syne)",
-                          fontWeight: 700,
-                          fontSize: "1rem",
-                          color: "#1a0f0a",
-                          marginBottom: "0.25rem",
-                        }}
-                      >
-                        {kat.title}
-                      </h3>
-                      <p style={{ fontSize: "0.85rem", color: "#6b7280", marginBottom: "0.5rem" }}>
+                    <div style={{ padding: "1.25rem" }}>
+                      <h3 style={{
+                        fontFamily: "var(--font-oswald)", fontWeight: 600,
+                        fontSize: "1.2rem", color: "#fff", textTransform: "uppercase",
+                        letterSpacing: "0.05em", marginBottom: "0.35rem",
+                      }}>{kat.title}</h3>
+                      <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.5)" }}>
                         {kat.desc}
                       </p>
-                      <span style={{ fontSize: "0.78rem", color: "#e25822", fontWeight: 600 }}>
-                        {kat.count} →
+                      <div style={{ marginTop: "0.75rem", color: "#ff4500", fontSize: "0.85rem", fontWeight: 600 }}>
+                        Ansehen →
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══ RATGEBER ═══ */}
+        <section style={{ padding: "6rem 1.5rem", background: "#0a0a0a", position: "relative" }}>
+          {/* Decorative fire line */}
+          <div style={{
+            position: "absolute", top: 0, left: 0, right: 0, height: "2px",
+            background: "linear-gradient(90deg, transparent, #ff4500 30%, #ff8c00 50%, #ff4500 70%, transparent)",
+          }} />
+
+          <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "3rem", flexWrap: "wrap", gap: "1rem" }}>
+              <div>
+                <div className="section-label" style={{ marginBottom: "0.75rem" }}>— Wissen & Tipps</div>
+                <h2 className="section-title">BBQ Ratgeber</h2>
+              </div>
+              <Link href="/ratgeber" style={{ color: "#ff4500", fontFamily: "var(--font-oswald)", letterSpacing: "0.1em", textTransform: "uppercase", fontSize: "0.875rem", fontWeight: 600 }}>
+                Alle ansehen →
+              </Link>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: "1.5rem" }}>
+              {RATGEBER.map((artikel) => (
+                <Link key={artikel.href} href={artikel.href} style={{ textDecoration: "none" }}>
+                  <div className="card-dark" style={{ cursor: "pointer" }}>
+                    <div style={{
+                      height: "220px",
+                      backgroundImage: `url('${artikel.img}')`,
+                      backgroundSize: "cover", backgroundPosition: "center",
+                      position: "relative",
+                    }}>
+                      <div style={{
+                        position: "absolute", inset: 0,
+                        background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 100%)",
+                      }} />
+                      <div style={{
+                        position: "absolute", bottom: "1rem", left: "1rem",
+                        background: "rgba(255,69,0,0.85)", borderRadius: "3px",
+                        padding: "0.2rem 0.6rem",
+                        fontSize: "0.7rem", fontWeight: 700, color: "#fff",
+                        fontFamily: "var(--font-oswald)", letterSpacing: "0.1em", textTransform: "uppercase",
+                      }}>{artikel.tag}</div>
+                    </div>
+                    <div style={{ padding: "1.5rem" }}>
+                      <h3 style={{
+                        fontFamily: "var(--font-oswald)", fontWeight: 600,
+                        fontSize: "1.1rem", color: "#fff", lineHeight: 1.3,
+                        textTransform: "uppercase", letterSpacing: "0.03em",
+                        marginBottom: "0.75rem",
+                      }}>{artikel.title}</h3>
+                      <span style={{ color: "#ff4500", fontSize: "0.875rem", fontWeight: 600 }}>
+                        Weiterlesen →
                       </span>
                     </div>
                   </div>
@@ -266,110 +256,42 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Top Produkte */}
-        <section style={{ padding: "5rem 1.5rem" }}>
-          <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-              <h2
-                style={{
-                  fontFamily: "var(--font-syne)",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-                  color: "#1a0f0a",
-                  marginBottom: "0.75rem",
-                }}
-              >
-                Unsere Top-Empfehlungen
-              </h2>
-              <p style={{ color: "#6b7280", fontSize: "1rem" }}>
-                Handverlesen, ausgiebig getestet, ehrlich bewertet.
-              </p>
-            </div>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-                gap: "1.5rem",
-              }}
-            >
-              {TOP_PRODUKTE.map((produkt) => (
-                <ProductCard key={produkt.name} {...produkt} />
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ═══ ÜBER UNS BANNER ═══ */}
+        <section style={{
+          position: "relative", padding: "6rem 1.5rem", overflow: "hidden",
+          background: "#111",
+        }}>
+          <div style={{
+            position: "absolute", inset: 0,
+            backgroundImage: "url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=1600&q=80')",
+            backgroundSize: "cover", backgroundPosition: "center",
+            filter: "brightness(0.2)",
+          }} />
+          <div style={{
+            position: "absolute", inset: 0,
+            background: "linear-gradient(135deg, rgba(255,69,0,0.15) 0%, transparent 60%)",
+          }} />
 
-        {/* Ratgeber Teaser */}
-        <section style={{ padding: "4rem 1.5rem", background: "#fff7f4" }}>
-          <div style={{ maxWidth: "1280px", margin: "0 auto", display: "flex", alignItems: "center", gap: "3rem", flexWrap: "wrap" }}>
-            <div style={{ flex: 1, minWidth: "280px" }}>
-              <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#e25822", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-                Ratgeber & Tipps
-              </span>
-              <h2
-                style={{
-                  fontFamily: "var(--font-syne)",
-                  fontWeight: 800,
-                  fontSize: "clamp(1.5rem, 3vw, 2rem)",
-                  color: "#1a0f0a",
-                  margin: "0.5rem 0 1rem",
-                }}
-              >
-                Wissen das dein BBQ auf das nächste Level bringt
-              </h2>
-              <p style={{ color: "#6b7280", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-                Von der Kaufberatung bis zur perfekten Low-&-Slow-Technik – unsere
-                Ratgeber geben dir das nötige Know-how für unvergessliche Grillabende.
-              </p>
-              <Link href="/ratgeber" className="btn-primary">
-                Alle Ratgeber ansehen →
-              </Link>
-            </div>
-            <div style={{ flex: 1, minWidth: "280px", display: "flex", flexDirection: "column", gap: "0.875rem" }}>
-              {[
-                { emoji: "🐷", title: "Spanferkel am Spieß – die ultimative Anleitung", href: "/ratgeber/spanferkel" },
-                { emoji: "🥩", title: "Low & Slow: Brisket perfekt smoken", href: "/ratgeber/low-and-slow" },
-                { emoji: "🛒", title: "Smoker kaufen – worauf wirklich ankommt", href: "/ratgeber/smoker-kaufberatung" },
-              ].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "1rem",
-                    padding: "1rem 1.25rem",
-                    background: "#fff",
-                    borderRadius: "12px",
-                    border: "1px solid #f1f5f9",
-                    textDecoration: "none",
-                    transition: "all 0.2s",
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
-                  }}
-                >
-                  <span style={{ fontSize: "1.5rem" }}>{item.emoji}</span>
-                  <span style={{ fontSize: "0.9rem", fontWeight: 600, color: "#1a0f0a" }}>
-                    {item.title}
-                  </span>
-                  <span style={{ marginLeft: "auto", color: "#e25822", fontSize: "1rem" }}>→</span>
-                </Link>
-              ))}
-            </div>
+          <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
+            <div className="section-label" style={{ marginBottom: "1rem" }}>— Unsere Philosophie</div>
+            <h2 className="section-title" style={{ marginBottom: "1.5rem" }}>
+              Wir grillen.<br />
+              <span style={{ color: "#ff4500" }}>Wir testen. Wir urteilen.</span>
+            </h2>
+            <p style={{ fontSize: "1.1rem", color: "rgba(255,255,255,0.65)", lineHeight: 1.8, marginBottom: "2.5rem", maxWidth: "600px", margin: "0 auto 2.5rem" }}>
+              Flamme & Fleisch ist kein Schreibtischprojekt. Jede Empfehlung kommt aus
+              echter Grillpraxis – vom Spanferkel am Spieß bis zum 16-Stunden-Brisket.
+            </p>
+            <Link href="/ratgeber" className="btn-fire">
+              Zu den Ratgebern →
+            </Link>
           </div>
         </section>
 
         {/* Affiliate Hinweis */}
-        <div
-          style={{
-            maxWidth: "1280px",
-            margin: "0 auto",
-            padding: "1.5rem",
-          }}
-        >
-          <p style={{ fontSize: "0.78rem", color: "#9ca3af", textAlign: "center" }}>
-            * Affiliate-Hinweis: Flamme & Fleisch nimmt am Amazon-Partnerprogramm teil.
-            Über unsere Links erhalten wir eine kleine Provision – für dich entstehen keine Mehrkosten.
-            Unsere Empfehlungen sind davon unabhängig.
+        <div style={{ background: "#0a0a0a", padding: "1.5rem" }}>
+          <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
+            * Affiliate-Hinweis: Flamme & Fleisch nimmt am Amazon-Partnerprogramm teil. Bei Käufen über unsere Links erhalten wir eine Provision – für dich entstehen keine Mehrkosten. Unsere Empfehlungen sind davon unabhängig.
           </p>
         </div>
 

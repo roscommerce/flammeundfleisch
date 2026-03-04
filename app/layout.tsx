@@ -1,25 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Syne } from "next/font/google";
+import { Barlow, Oswald } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
+const barlow = Barlow({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-barlow" });
+const oswald = Oswald({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-oswald" });
 
 export const metadata: Metadata = {
   title: "Flamme & Fleisch – Grill & BBQ Ratgeber",
-  description:
-    "Dein unabhängiger Ratgeber für Grills, Smoker und BBQ-Zubehör. Echte Erfahrungen, ehrliche Vergleiche, die besten Deals.",
-  keywords: "Grill, Smoker, BBQ, Barbecue, Grill Kaufberatung, Smoker Test, Grillzubehör",
+  description: "Dein unabhängiger Ratgeber für Grills, Smoker und BBQ-Zubehör.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
-      <body className={`${inter.variable} ${syne.variable}`}>{children}</body>
+      <body className={`${barlow.variable} ${oswald.variable}`}>{children}</body>
     </html>
   );
 }
