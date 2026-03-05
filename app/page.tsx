@@ -5,17 +5,17 @@ import CookieBanner from "@/components/CookieBanner";
 
 const KATEGORIEN = [
   { icon: "🔥", title: "Gasgrills",       desc: "Schnell, präzise, immer bereit",       href: "/grills/gasgrill",
-    img: "https://images.unsplash.com/photo-ul_m5dHThaM?w=400&q=80" },
+    img: "/images/gasgrill.png" },
   { icon: "🪨", title: "Holzkohlegrills", desc: "Das Original – echtes Raucharoma",      href: "/grills/holzkohle",
-    img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=80" },
+    img: "/images/holzkohle.png" },
   { icon: "💨", title: "Offset Smoker",   desc: "Low & Slow für Profis",                 href: "/smoker/offset-smoker",
-    img: "https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=80" },
-  { icon: "🪵", title: "Pelletgrills",    desc: "Automatisch smoken mit Holzaromen",     href: "/grills/pelletgrill",
-    img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=400&q=80" },
+    img: "/images/offset-smoker.png" },
+  { icon: "🪵", title: "Pelletsmoker",    desc: "Automatisch smoken mit Holzaromen",     href: "/grills/pelletgrill",
+    img: "/images/pelletsmoker.png" },
   { icon: "🍢", title: "Spießsysteme",    desc: "Spanferkel & Hähnchen auf Hochtouren",  href: "/zubehoer/spiesssysteme",
-    img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" },
+    img: "/images/spiesssystem.png" },
   { icon: "🌡️", title: "Thermometer",    desc: "Perfekte Kerntemperatur, garantiert",   href: "/zubehoer/thermometer",
-    img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80" },
+    img: "/images/thermometer.png" },
 ];
 
 const RATGEBER = [
