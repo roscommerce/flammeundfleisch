@@ -20,11 +20,11 @@ const KATEGORIEN = [
 
 const RATGEBER = [
   { emoji: "🐷", title: "Spanferkel am Spieß – die ultimative Anleitung", tag: "Technik", href: "/ratgeber/spanferkel",
-    img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" },
+    img: "/images/ratgeber-spanferkel.png" },
   { emoji: "🥩", title: "Low & Slow: Brisket richtig smoken",             tag: "Technik", href: "/ratgeber/low-and-slow",
-    img: "https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80" },
+    img: "/images/ratgeber-brisket.png" },
   { emoji: "🛒", title: "Smoker kaufen – worauf es wirklich ankommt",     tag: "Kaufberatung", href: "/ratgeber/smoker-kaufberatung",
-    img: "https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" },
+    img: "/images/ratgeber-kaufberatung.png" },
 ];
 
 const SMOKE_PARTICLES = [
@@ -76,7 +76,7 @@ export default function HomePage() {
           {/* Hero background – BBQ competition with multiple grills */}
           <div style={{
             position: "absolute", inset: 0,
-            backgroundImage: "url('https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=1600&q=80')",
+            backgroundImage: "url('/images/hero.png')",
             backgroundSize: "cover", backgroundPosition: "center",
             filter: "brightness(0.3) saturate(1.2)",
           }} />
@@ -247,7 +247,7 @@ export default function HomePage() {
 
         {/* ═══ PHILOSOPHIE BANNER ═══ */}
         <section style={{ position: "relative", padding: "6rem 1.5rem", overflow: "hidden", background: "#181818" }}>
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&q=80')", backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.18)" }} />
+          <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/ratgeber-brisket.png')", backgroundSize: "cover", backgroundPosition: "center", filter: "brightness(0.18)" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(255,69,0,0.15) 0%, transparent 60%)" }} />
           <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto", textAlign: "center" }}>
             <div className="section-label" style={{ marginBottom: "1rem" }}>— Unsere Philosophie</div>
